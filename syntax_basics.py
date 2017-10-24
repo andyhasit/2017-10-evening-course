@@ -49,6 +49,17 @@ what's inside a variable, whether for learning or debugging.
 If you are using Python2 the brackets are optional. In Python3 they are 
 mandatory.
 
+Python will ignore certain lines, known as comments. This text is in a 
+multiple line comment. Python also treats anythins after a # sign as a comment,
+allowing you to annotate your code, or make Python ignore lines:
+'''
+
+print(99) # This line prints 99!
+# This line is completely ignore, as is the next one.
+#print(100)
+print(101)
+
+'''
 Let's do something more interesting:
 '''
 
@@ -62,7 +73,7 @@ Here we created 2 variables and then told Python to print them.
 
 Running this should have printed this:
 2
-5
+3
 
 Variables are how we keep track of values or "data". A computer program is 
 simply a bunch of operations on data (some of which gets sent to other places
