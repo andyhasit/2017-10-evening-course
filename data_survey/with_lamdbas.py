@@ -49,17 +49,19 @@ from pprint import pprint
 from datetime import datetime 
 
 
-def strip_row_spaces(row):
+def tidy(row):
     return [i.strip() for i in row]
-
 
 def extract_csv_data(filename):
     """Returns list of rows"""
     rows = []
+    tidy = lambda r: [i.strip() for i in row]
+    #def tidy(r): 
+    #    return [i.strip() for i in row]
     with open(filename) as f:
         for l in f.readlines():
             row = l.split(',')
-            rows.append(strip_row_spaces(row))
+            rows.append(tidy(row))
     return rows[0], rows[1:]
 
 
@@ -165,9 +167,7 @@ def exercise_2():
     data = convert_to_dicts(headers, rows)
     results = filter_list(data, {'country': 'england', 'q4': 'No'})
     print(len(results))
-
-
-
+    
 
 exercise_1()
 
